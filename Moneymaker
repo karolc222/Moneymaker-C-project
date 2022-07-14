@@ -1,0 +1,40 @@
+using System;
+
+namespace MoneyMaker
+{
+  class MainClass
+  {
+    public static void Main(string[] args)
+    {
+      //greet the user and get input
+      Console.WriteLine("Welcome to Money Maker!");
+      Console.WriteLine("Enter amount:");
+      string totalAsString = Console.ReadLine();
+      double total = Convert.ToDouble(totalAsString);
+      Console.WriteLine($"{total} is equal to ...");
+
+      //Define coin values
+      int goldValue = 10;
+      int silverValue = 5;
+
+      //calculate the change
+      double goldCoins = Math.Floor(total/goldValue);
+      double remainder = total % goldValue;
+
+      double silverCoins = Math.Floor(remainder/silverValue);
+      remainder = remainder % silverValue;
+
+      //print results all coins 
+      Console.WriteLine($"Gold coins:{goldCoins}");
+      Console.WriteLine($"Silver coins:{silverCoins}");
+      Console.WriteLine($"Bronze coins:{remainder}");
+      
+
+
+
+      
+      
+
+    }
+  }
+}
